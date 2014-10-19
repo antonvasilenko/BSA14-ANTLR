@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from e:\work\binary\learn\ANTLR\BSA14-ANTLR\Calculator\CalculatorV2\Parser\Calc.g4 by ANTLR 4.3
+// Generated from E:\work\binary\learn\ANTLR\BSA14-ANTLR\Calculator\Calc.Antlr\Calc.g4 by ANTLR 4.3
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -17,7 +17,7 @@
 // Missing XML comment for publicly visible type or member '...'
 #pragma warning disable 1591
 
-namespace CalculatorV2.Parser.Antlr {
+namespace CalculatorV2.Parser.Calc.Antlr {
 
 using Antlr4.Runtime.Misc;
 using IErrorNode = Antlr4.Runtime.Tree.IErrorNode;
@@ -47,17 +47,43 @@ public partial class CalcBaseListener : ICalcListener {
 	public virtual void ExitEntry([NotNull] CalcParser.EntryContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="CalcParser.expr"/>.
+	/// Enter a parse tree produced by <see cref="CalcParser.MulDiv"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterExpr([NotNull] CalcParser.ExprContext context) { }
+	public virtual void EnterMulDiv([NotNull] CalcParser.MulDivContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="CalcParser.expr"/>.
+	/// Exit a parse tree produced by <see cref="CalcParser.MulDiv"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitExpr([NotNull] CalcParser.ExprContext context) { }
+	public virtual void ExitMulDiv([NotNull] CalcParser.MulDivContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.AddSub"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterAddSub([NotNull] CalcParser.AddSubContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.AddSub"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitAddSub([NotNull] CalcParser.AddSubContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.Parens"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterParens([NotNull] CalcParser.ParensContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.Parens"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitParens([NotNull] CalcParser.ParensContext context) { }
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="CalcParser.value"/>.
@@ -72,6 +98,19 @@ public partial class CalcBaseListener : ICalcListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitValue([NotNull] CalcParser.ValueContext context) { }
 
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.Int"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterInt([NotNull] CalcParser.IntContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.Int"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitInt([NotNull] CalcParser.IntContext context) { }
+
 	/// <inheritdoc/>
 	/// <remarks>The default implementation does nothing.</remarks>
 	public virtual void EnterEveryRule([NotNull] ParserRuleContext context) { }
@@ -85,4 +124,4 @@ public partial class CalcBaseListener : ICalcListener {
 	/// <remarks>The default implementation does nothing.</remarks>
 	public virtual void VisitErrorNode([NotNull] IErrorNode node) { }
 }
-} // namespace CalculatorV2.Parser.Antlr
+} // namespace CalculatorV2.Parser.Calc.Antlr

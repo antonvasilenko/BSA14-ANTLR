@@ -1,7 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 
-namespace Calculator.Tests
+namespace CalculatorV2.Tests
 {
     [TestFixture]
     class Tests
@@ -13,19 +13,19 @@ namespace Calculator.Tests
             new Calculator().Calculate("2 ++ 2");
         }
 
-        [TestCase("2+2", "4", Result = true)]
-        [TestCase("2+2+2", "6", Result = true)]
-        public bool TestSum(string input, string result)
+        [TestCase("2+2", Result = "4")]
+        [TestCase("2+2+2", Result = "6")]
+        public string TestSum(string input)
         {
-            return result == new Calculator().Calculate(input);
+            return new Calculator().Calculate(input);
         }
 
-        [TestCase("2+2*2", "6", Result = true)]
-        [TestCase("(2+2)*2", "8", Result = true)]
-        [TestCase("(2+2)*(2+3/3)", "12", Result = true)]
-        public bool TestPriority(string input, string result)
+        [TestCase("2+2*2", Result = "6")]
+        [TestCase("(2+2)*2", Result = "8")]
+        [TestCase("(2+2)*(2+3/3)", Result = "12")]
+        public string TestPriority(string input)
         {
-            return result == new Calculator().Calculate(input);
+            return new Calculator().Calculate(input);
         }
 
         [Test]

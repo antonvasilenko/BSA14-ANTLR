@@ -3,10 +3,12 @@ grammar Calc;
 /*
  * Parser Rules
  */
-expr:    expr OP_SUM expr
-    |    expr OP_MUL expr
-    |    LP expr RP
-    |    value;
+expr
+    :    expr OP_MUL expr   # MulDiv
+    |    expr OP_SUM expr   # AddSub
+    |    value              # Int
+    |    LP expr RP         # Parens
+    ;
 
 value: OP_SUM? INT;
 
@@ -16,7 +18,9 @@ entry: expr | EOF;
  * Lexer Rules
  */
 
-WS: [\t\n\r]+ -> skip;
+WS  
+    : [ \t\n\r]+ -> skip
+    ;
 LP: '(';
 RP: ')';
 
