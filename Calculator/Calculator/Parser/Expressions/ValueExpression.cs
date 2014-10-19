@@ -1,7 +1,7 @@
 using System;
 using System.Text;
 
-namespace Calculator.Expressions
+namespace Calculator.Parser.Expressions
 {
     public class ValueExpression : Expression
     {

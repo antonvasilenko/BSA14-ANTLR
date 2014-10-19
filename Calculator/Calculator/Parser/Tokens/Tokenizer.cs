@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Calculator.Tokens
+namespace Calculator.Parser.Tokens
 {
     internal class Tokenizer
     {

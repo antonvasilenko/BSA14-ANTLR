@@ -1,4 +1,4 @@
-﻿namespace Calculator.Tokens
+﻿namespace Calculator.Parser.Tokens
 {
     public enum TokenKind
     {

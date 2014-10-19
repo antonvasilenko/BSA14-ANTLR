@@ -1,8 +1,8 @@
 ﻿using System;
-using Calculator.Expressions;
-using Calculator.Tokens;
+using Calculator.Parser.Expressions;
+using Calculator.Parser.Tokens;
 
-namespace Calculator
+namespace Calculator.Parser
 {
     internal class Parser
     {

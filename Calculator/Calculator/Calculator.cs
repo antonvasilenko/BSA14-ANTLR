@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Globalization;
 using System.Text;
-using Calculator.Expressions;
-using Calculator.Tokens;
+using Calculator.Parser.Expressions;
+using Calculator.Parser.Tokens;
 
 namespace Calculator
 {
@@ -33,7 +33,7 @@ namespace Calculator
             }
 
             var tokenizer = new Tokenizer(_input);
-            var parser = new Parser();
+            var parser = new Parser.Parser();
             Expression expr = parser.Parse(tokenizer);
 
             if (Debug)

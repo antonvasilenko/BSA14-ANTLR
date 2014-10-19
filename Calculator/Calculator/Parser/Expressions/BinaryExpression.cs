@@ -1,8 +1,16 @@
 using System;
 using System.Text;
 
-namespace Calculator.Expressions
+namespace Calculator.Parser.Expressions
 {
+    public enum BinaryOperator
+    {
+        Add,
+        Substract,
+        Multiply,
+        Divide
+    }
+
     public class BinaryExpression : Expression
     {
         public override ExpressionKind Kind { get { return ExpressionKind.Binary; } }

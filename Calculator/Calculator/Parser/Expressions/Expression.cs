@@ -1,19 +1,11 @@
 ﻿using System.Text;
 
-namespace Calculator.Expressions
+namespace Calculator.Parser.Expressions
 {
     public enum ExpressionKind
     {
         Binary,
         Value
-    }
-
-    public enum BinaryOperator
-    {
-        Add,
-        Substract,
-        Multiply,
-        Divide
     }
 
     public abstract class Expression
