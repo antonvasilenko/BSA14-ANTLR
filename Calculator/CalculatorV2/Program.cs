@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CalculatorV2
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            var inputString = args[0];
+            var result = new Calculator(true).Calculate(inputString);
+            Console.WriteLine("{0} = {1}", args[0], result);
         }
     }
 }

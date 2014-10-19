@@ -9,7 +9,6 @@ namespace Calculator
     public class Calculator
     {
         private string _input;
-        private string _result = "unknown";
 
         public bool Debug { get; private set; }
 
@@ -45,8 +44,8 @@ namespace Calculator
             if (tokenizer.TokenKind != TokenKind.Eof)
                 throw new FormatException("Invalid expression string");
 
-            _result = expr.Evaluate().ToString(CultureInfo.InvariantCulture);
-            return _result;
+            var result = expr.Evaluate().ToString(CultureInfo.InvariantCulture);
+            return result;
         }
     }
 }
