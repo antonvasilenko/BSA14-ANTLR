@@ -22,7 +22,7 @@ namespace CalculatorV2.Parser
         {
             var left = Visit(context.expr(0));
             var right = Visit(context.expr(1));
-            var op = context.OP_MUL() ?? context.OP_SUM();
+            var op = context.OP_PR1() ?? context.OP_SUM();
             var opText = op.GetText();
             if (opText == "+")
                 return left + right;

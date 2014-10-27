@@ -67,6 +67,17 @@ public interface ICalcListener : IParseTreeListener {
 	void ExitBinaryOperation([NotNull] CalcParser.BinaryOperationContext context);
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.zero_value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterZero_value([NotNull] CalcParser.Zero_valueContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.zero_value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitZero_value([NotNull] CalcParser.Zero_valueContext context);
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="CalcParser.value"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

@@ -31,6 +31,9 @@ namespace CalculatorV2
             var lexer = new CalcLexer(stream);
             var tokenStream = new CommonTokenStream(lexer);
             var parser = new CalcParser(tokenStream);
+
+            parser.RemoveErrorListeners();
+            parser.AddErrorListener(new CustomErrorListener());
             var tree = parser.entry();
             var result = tree.Accept(new EvaluatorVisitor());
             return result.ToString(CultureInfo.InvariantCulture);

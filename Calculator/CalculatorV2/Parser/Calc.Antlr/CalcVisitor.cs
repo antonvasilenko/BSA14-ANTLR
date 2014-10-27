@@ -54,6 +54,13 @@ public interface ICalcVisitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitBinaryOperation([NotNull] CalcParser.BinaryOperationContext context);
 
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="CalcParser.zero_value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitZero_value([NotNull] CalcParser.Zero_valueContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="CalcParser.value"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

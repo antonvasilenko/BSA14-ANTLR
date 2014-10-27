@@ -57,6 +57,7 @@
     <Compile Include="Parser\Calc.Antlr\CalcListener.cs" />
     <Compile Include="Parser\Calc.Antlr\CalcParser.cs" />
     <Compile Include="Parser\Calc.Antlr\CalcVisitor.cs" />
+    <Compile Include="Parser\CustomErrorListener.cs" />
     <Compile Include="Parser\EvaluatorVisitor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
