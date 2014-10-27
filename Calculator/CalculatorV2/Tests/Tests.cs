@@ -29,15 +29,21 @@ namespace CalculatorV2.Tests
         }
 
         [Test]
-        public void TestDivideRound()
+        public void TestDivideFloat()
         {
-            Assert.AreEqual("1", new Calculator().Calculate("3/2"));
-            Assert.AreEqual("0", new Calculator().Calculate("2/3"));
+            Assert.AreEqual("1.5", new Calculator().Calculate("3/2"));
         }
 
         [TestCase("2 + -2", Result = "0")]
         [TestCase("-2 - -1*(3*-4)", Result = "-14")]
         public string TestNegativeNumbers(string input)
+        {
+            return new Calculator().Calculate(input);
+        }
+
+        [TestCase("2.5 + 3.5", Result = "6")]
+        [TestCase("1.1 + .2", Result = "1.3")]
+        public string TestFloat(string input)
         {
             return new Calculator().Calculate(input);
         }

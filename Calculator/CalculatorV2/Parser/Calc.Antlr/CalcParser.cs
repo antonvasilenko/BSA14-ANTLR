@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from E:\work\binary\learn\ANTLR\BSA14-ANTLR\Calculator\Calc.Antlr\Calc.g4 by ANTLR 4.3
+// Generated from e:\work\binary\learn\ANTLR\BSA14-ANTLR\Calculator\Calc.Antlr\Calc.g4 by ANTLR 4.3
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -29,9 +29,9 @@ using DFA = Antlr4.Runtime.Dfa.DFA;
 [System.CLSCompliant(false)]
 public partial class CalcParser : Parser {
 	public const int
-		WS=1, LP=2, RP=3, INT=4, OP_MUL=5, OP_SUM=6;
+		WS=1, LP=2, RP=3, FLOAT=4, OP_MUL=5, OP_SUM=6;
 	public static readonly string[] tokenNames = {
-		"<INVALID>", "WS", "'('", "')'", "INT", "OP_MUL", "OP_SUM"
+		"<INVALID>", "WS", "'('", "')'", "FLOAT", "OP_MUL", "OP_SUM"
 	};
 	public const int
 		RULE_expr = 0, RULE_value = 1, RULE_entry = 2;
@@ -64,52 +64,6 @@ public partial class CalcParser : Parser {
 			base.CopyFrom(context);
 		}
 	}
-	public partial class MulDivContext : ExprContext {
-		public IReadOnlyList<ExprContext> expr() {
-			return GetRuleContexts<ExprContext>();
-		}
-		public ExprContext expr(int i) {
-			return GetRuleContext<ExprContext>(i);
-		}
-		public ITerminalNode OP_MUL() { return GetToken(CalcParser.OP_MUL, 0); }
-		public MulDivContext(ExprContext context) { CopyFrom(context); }
-		public override void EnterRule(IParseTreeListener listener) {
-			ICalcListener typedListener = listener as ICalcListener;
-			if (typedListener != null) typedListener.EnterMulDiv(this);
-		}
-		public override void ExitRule(IParseTreeListener listener) {
-			ICalcListener typedListener = listener as ICalcListener;
-			if (typedListener != null) typedListener.ExitMulDiv(this);
-		}
-		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICalcVisitor<TResult> typedVisitor = visitor as ICalcVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitMulDiv(this);
-			else return visitor.VisitChildren(this);
-		}
-	}
-	public partial class AddSubContext : ExprContext {
-		public IReadOnlyList<ExprContext> expr() {
-			return GetRuleContexts<ExprContext>();
-		}
-		public ExprContext expr(int i) {
-			return GetRuleContext<ExprContext>(i);
-		}
-		public ITerminalNode OP_SUM() { return GetToken(CalcParser.OP_SUM, 0); }
-		public AddSubContext(ExprContext context) { CopyFrom(context); }
-		public override void EnterRule(IParseTreeListener listener) {
-			ICalcListener typedListener = listener as ICalcListener;
-			if (typedListener != null) typedListener.EnterAddSub(this);
-		}
-		public override void ExitRule(IParseTreeListener listener) {
-			ICalcListener typedListener = listener as ICalcListener;
-			if (typedListener != null) typedListener.ExitAddSub(this);
-		}
-		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICalcVisitor<TResult> typedVisitor = visitor as ICalcVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitAddSub(this);
-			else return visitor.VisitChildren(this);
-		}
-	}
 	public partial class ParensContext : ExprContext {
 		public ITerminalNode RP() { return GetToken(CalcParser.RP, 0); }
 		public ExprContext expr() {
@@ -128,6 +82,30 @@ public partial class CalcParser : Parser {
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			ICalcVisitor<TResult> typedVisitor = visitor as ICalcVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitParens(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+	public partial class BinaryOperationContext : ExprContext {
+		public IReadOnlyList<ExprContext> expr() {
+			return GetRuleContexts<ExprContext>();
+		}
+		public ExprContext expr(int i) {
+			return GetRuleContext<ExprContext>(i);
+		}
+		public ITerminalNode OP_SUM() { return GetToken(CalcParser.OP_SUM, 0); }
+		public ITerminalNode OP_MUL() { return GetToken(CalcParser.OP_MUL, 0); }
+		public BinaryOperationContext(ExprContext context) { CopyFrom(context); }
+		public override void EnterRule(IParseTreeListener listener) {
+			ICalcListener typedListener = listener as ICalcListener;
+			if (typedListener != null) typedListener.EnterBinaryOperation(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			ICalcListener typedListener = listener as ICalcListener;
+			if (typedListener != null) typedListener.ExitBinaryOperation(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			ICalcVisitor<TResult> typedVisitor = visitor as ICalcVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitBinaryOperation(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
@@ -169,7 +147,7 @@ public partial class CalcParser : Parser {
 			{
 			State = 12;
 			switch (_input.La(1)) {
-			case INT:
+			case FLOAT:
 			case OP_SUM:
 				{
 				_localctx = new IntContext(_localctx);
@@ -205,7 +183,7 @@ public partial class CalcParser : Parser {
 					switch ( Interpreter.AdaptivePredict(_input,1,_ctx) ) {
 					case 1:
 						{
-						_localctx = new MulDivContext(new ExprContext(_parentctx, _parentState));
+						_localctx = new BinaryOperationContext(new ExprContext(_parentctx, _parentState));
 						PushNewRecursionContext(_localctx, _startState, RULE_expr);
 						State = 14;
 						if (!(Precpred(_ctx, 4))) throw new FailedPredicateException(this, "Precpred(_ctx, 4)");
@@ -216,7 +194,7 @@ public partial class CalcParser : Parser {
 
 					case 2:
 						{
-						_localctx = new AddSubContext(new ExprContext(_parentctx, _parentState));
+						_localctx = new BinaryOperationContext(new ExprContext(_parentctx, _parentState));
 						PushNewRecursionContext(_localctx, _startState, RULE_expr);
 						State = 17;
 						if (!(Precpred(_ctx, 3))) throw new FailedPredicateException(this, "Precpred(_ctx, 3)");
@@ -246,7 +224,7 @@ public partial class CalcParser : Parser {
 
 	public partial class ValueContext : ParserRuleContext {
 		public ITerminalNode OP_SUM() { return GetToken(CalcParser.OP_SUM, 0); }
-		public ITerminalNode INT() { return GetToken(CalcParser.INT, 0); }
+		public ITerminalNode FLOAT() { return GetToken(CalcParser.FLOAT, 0); }
 		public ValueContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
@@ -283,7 +261,7 @@ public partial class CalcParser : Parser {
 				}
 			}
 
-			State = 28; Match(INT);
+			State = 28; Match(FLOAT);
 			}
 		}
 		catch (RecognitionException re) {
@@ -330,7 +308,7 @@ public partial class CalcParser : Parser {
 			State = 32;
 			switch (_input.La(1)) {
 			case LP:
-			case INT:
+			case FLOAT:
 			case OP_SUM:
 				EnterOuterAlt(_localctx, 1);
 				{

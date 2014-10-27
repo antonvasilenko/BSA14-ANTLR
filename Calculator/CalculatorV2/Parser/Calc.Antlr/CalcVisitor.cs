@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from E:\work\binary\learn\ANTLR\BSA14-ANTLR\Calculator\Calc.Antlr\Calc.g4 by ANTLR 4.3
+// Generated from e:\work\binary\learn\ANTLR\BSA14-ANTLR\Calculator\Calc.Antlr\Calc.g4 by ANTLR 4.3
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -38,28 +38,20 @@ public interface ICalcVisitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitEntry([NotNull] CalcParser.EntryContext context);
 
 	/// <summary>
-	/// Visit a parse tree produced by the <c>MulDiv</c>
-	/// labeled alternative in <see cref="CalcParser.expr"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitMulDiv([NotNull] CalcParser.MulDivContext context);
-
-	/// <summary>
-	/// Visit a parse tree produced by the <c>AddSub</c>
-	/// labeled alternative in <see cref="CalcParser.expr"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitAddSub([NotNull] CalcParser.AddSubContext context);
-
-	/// <summary>
 	/// Visit a parse tree produced by the <c>Parens</c>
 	/// labeled alternative in <see cref="CalcParser.expr"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitParens([NotNull] CalcParser.ParensContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by the <c>BinaryOperation</c>
+	/// labeled alternative in <see cref="CalcParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitBinaryOperation([NotNull] CalcParser.BinaryOperationContext context);
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="CalcParser.value"/>.

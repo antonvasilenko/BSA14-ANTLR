@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from E:\work\binary\learn\ANTLR\BSA14-ANTLR\Calculator\Calc.Antlr\Calc.g4 by ANTLR 4.3
+// Generated from e:\work\binary\learn\ANTLR\BSA14-ANTLR\Calculator\Calc.Antlr\Calc.g4 by ANTLR 4.3
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -41,32 +41,6 @@ public interface ICalcListener : IParseTreeListener {
 	void ExitEntry([NotNull] CalcParser.EntryContext context);
 
 	/// <summary>
-	/// Enter a parse tree produced by the <c>MulDiv</c>
-	/// labeled alternative in <see cref="CalcParser.expr"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterMulDiv([NotNull] CalcParser.MulDivContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>MulDiv</c>
-	/// labeled alternative in <see cref="CalcParser.expr"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitMulDiv([NotNull] CalcParser.MulDivContext context);
-
-	/// <summary>
-	/// Enter a parse tree produced by the <c>AddSub</c>
-	/// labeled alternative in <see cref="CalcParser.expr"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterAddSub([NotNull] CalcParser.AddSubContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>AddSub</c>
-	/// labeled alternative in <see cref="CalcParser.expr"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitAddSub([NotNull] CalcParser.AddSubContext context);
-
-	/// <summary>
 	/// Enter a parse tree produced by the <c>Parens</c>
 	/// labeled alternative in <see cref="CalcParser.expr"/>.
 	/// </summary>
@@ -78,6 +52,19 @@ public interface ICalcListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitParens([NotNull] CalcParser.ParensContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>BinaryOperation</c>
+	/// labeled alternative in <see cref="CalcParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterBinaryOperation([NotNull] CalcParser.BinaryOperationContext context);
+	/// <summary>
+	/// Exit a parse tree produced by the <c>BinaryOperation</c>
+	/// labeled alternative in <see cref="CalcParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitBinaryOperation([NotNull] CalcParser.BinaryOperationContext context);
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="CalcParser.value"/>.

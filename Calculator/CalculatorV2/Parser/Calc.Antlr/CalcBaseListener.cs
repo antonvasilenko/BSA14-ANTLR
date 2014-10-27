@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from E:\work\binary\learn\ANTLR\BSA14-ANTLR\Calculator\Calc.Antlr\Calc.g4 by ANTLR 4.3
+// Generated from e:\work\binary\learn\ANTLR\BSA14-ANTLR\Calculator\Calc.Antlr\Calc.g4 by ANTLR 4.3
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -47,32 +47,6 @@ public partial class CalcBaseListener : ICalcListener {
 	public virtual void ExitEntry([NotNull] CalcParser.EntryContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="CalcParser.MulDiv"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterMulDiv([NotNull] CalcParser.MulDivContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CalcParser.MulDiv"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitMulDiv([NotNull] CalcParser.MulDivContext context) { }
-
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CalcParser.AddSub"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterAddSub([NotNull] CalcParser.AddSubContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CalcParser.AddSub"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitAddSub([NotNull] CalcParser.AddSubContext context) { }
-
-	/// <summary>
 	/// Enter a parse tree produced by <see cref="CalcParser.Parens"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -84,6 +58,19 @@ public partial class CalcBaseListener : ICalcListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitParens([NotNull] CalcParser.ParensContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.BinaryOperation"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterBinaryOperation([NotNull] CalcParser.BinaryOperationContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.BinaryOperation"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitBinaryOperation([NotNull] CalcParser.BinaryOperationContext context) { }
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="CalcParser.value"/>.
