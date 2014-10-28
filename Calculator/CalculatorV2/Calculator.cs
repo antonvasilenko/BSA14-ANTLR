@@ -8,10 +8,12 @@ namespace CalculatorV2
 {
     public class Calculator
     {
+        private readonly IAntlrErrorListener<IToken> _errorListener;
         public bool Debug { get; private set; }
 
-        public Calculator(bool debug = false)
+        public Calculator(bool debug = false, IAntlrErrorListener<IToken> errorListener = null)
         {
+            _errorListener = errorListener ?? new CustomErrorListener();
             Debug = debug;
         }
 
@@ -33,7 +35,7 @@ namespace CalculatorV2
             var parser = new CalcParser(tokenStream);
 
             parser.RemoveErrorListeners();
-            parser.AddErrorListener(new CustomErrorListener());
+            parser.AddErrorListener(_errorListener);
             var tree = parser.entry();
             var result = tree.Accept(new EvaluatorVisitor());
             return result.ToString(CultureInfo.InvariantCulture);

@@ -38,6 +38,14 @@ public interface ICalcVisitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitEntry([NotNull] CalcParser.EntryContext context);
 
 	/// <summary>
+	/// Visit a parse tree produced by the <c>Number</c>
+	/// labeled alternative in <see cref="CalcParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitNumber([NotNull] CalcParser.NumberContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by the <c>Parens</c>
 	/// labeled alternative in <see cref="CalcParser.expr"/>.
 	/// </summary>
@@ -66,13 +74,5 @@ public interface ICalcVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitValue([NotNull] CalcParser.ValueContext context);
-
-	/// <summary>
-	/// Visit a parse tree produced by the <c>Int</c>
-	/// labeled alternative in <see cref="CalcParser.expr"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitInt([NotNull] CalcParser.IntContext context);
 }
 } // namespace CalculatorV2.Parser.Calc.Antlr

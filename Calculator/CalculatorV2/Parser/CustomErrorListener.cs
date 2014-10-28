@@ -9,9 +9,19 @@ namespace CalculatorV2.Parser
 {
     class CustomErrorListener: BaseErrorListener
     {
+        private List<string> _errors = new List<string>();
+
+        public List<String> Errors
+        {
+            get { return _errors; }
+            set { _errors = value; }
+        }
+
         public override void SyntaxError(IRecognizer recognizer, IToken offendingSymbol, int line, int charPositionInLine, string msg, RecognitionException e)
         {
-            Console.WriteLine("Error at position [" + line + ":" + charPositionInLine + "] : " + msg);
+            var errorText = string.Format("Error at position [{0}:{1}] : {2}", line, charPositionInLine, msg);
+            Errors.Add(errorText);
+            Console.WriteLine(errorText);
             UnderlineError(recognizer, (IToken)offendingSymbol, line, charPositionInLine);
         }
 

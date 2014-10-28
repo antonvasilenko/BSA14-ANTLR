@@ -47,6 +47,19 @@ public partial class CalcBaseListener : ICalcListener {
 	public virtual void ExitEntry([NotNull] CalcParser.EntryContext context) { }
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.Number"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterNumber([NotNull] CalcParser.NumberContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.Number"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitNumber([NotNull] CalcParser.NumberContext context) { }
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="CalcParser.Parens"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -97,19 +110,6 @@ public partial class CalcBaseListener : ICalcListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitValue([NotNull] CalcParser.ValueContext context) { }
-
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CalcParser.Int"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterInt([NotNull] CalcParser.IntContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CalcParser.Int"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitInt([NotNull] CalcParser.IntContext context) { }
 
 	/// <inheritdoc/>
 	/// <remarks>The default implementation does nothing.</remarks>

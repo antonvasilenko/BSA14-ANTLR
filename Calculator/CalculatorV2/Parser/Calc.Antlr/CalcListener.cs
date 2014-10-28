@@ -41,6 +41,19 @@ public interface ICalcListener : IParseTreeListener {
 	void ExitEntry([NotNull] CalcParser.EntryContext context);
 
 	/// <summary>
+	/// Enter a parse tree produced by the <c>Number</c>
+	/// labeled alternative in <see cref="CalcParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterNumber([NotNull] CalcParser.NumberContext context);
+	/// <summary>
+	/// Exit a parse tree produced by the <c>Number</c>
+	/// labeled alternative in <see cref="CalcParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitNumber([NotNull] CalcParser.NumberContext context);
+
+	/// <summary>
 	/// Enter a parse tree produced by the <c>Parens</c>
 	/// labeled alternative in <see cref="CalcParser.expr"/>.
 	/// </summary>
@@ -87,18 +100,5 @@ public interface ICalcListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitValue([NotNull] CalcParser.ValueContext context);
-
-	/// <summary>
-	/// Enter a parse tree produced by the <c>Int</c>
-	/// labeled alternative in <see cref="CalcParser.expr"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterInt([NotNull] CalcParser.IntContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>Int</c>
-	/// labeled alternative in <see cref="CalcParser.expr"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitInt([NotNull] CalcParser.IntContext context);
 }
 } // namespace CalculatorV2.Parser.Calc.Antlr

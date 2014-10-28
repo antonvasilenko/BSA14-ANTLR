@@ -1,4 +1,6 @@
-﻿namespace Calc.Antlr
+﻿using System;
+
+namespace Calc.Antlr
 {
     partial class CalcParser
     {

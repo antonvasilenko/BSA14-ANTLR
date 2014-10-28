@@ -1,20 +1,21 @@
 grammar Calc;
 
-@members {
-  private bool isZero(string text)
-  {
-     var number = System.Double.Parse(text, System.Globalization.CultureInfo.InvariantCulture);
-     return number == 0;
-  }
+@parser::members{
+private void zeroDetected()
+{
+    throw new System.InvalidOperationException("division by zero");
 }
+}
+
 /*
  * Parser Rules
  */
 expr
-    :    expr OP_DIV zero_value { System.Console.WriteLine("division by zero") } #BinaryOperation
+    :    expr OP_DIV zero_value { zeroDetected(); } #BinaryOperation
     |    expr OP_PR1 expr   # BinaryOperation
     |    expr OP_SUM expr   # BinaryOperation
-    |    value              # Int
+    |    zero_value         # Number
+    |    value              # Number
     |    LP expr RP         # Parens
     ;
 
@@ -33,14 +34,15 @@ WS
 LP: '(';
 RP: ')';
 
-//INT: DIGIT+; // match 1 2 23 etc
+ZERO
+    : '0'+ '.' '0'*
+    | '.'? '0'+;
+
 FLOAT
     : DIGIT+ '.' DIGIT* // match 0.2 1.5
     | '.'? DIGIT+;       // match .2 23
 fragment DIGIT: [0-9];
-ZERO
-    : '0'+ '.' '0'*
-    | '.'? '0'+;
+
 
 OP_PR1: OP_DIV | OP_MUL;
 OP_SUM: [+-];

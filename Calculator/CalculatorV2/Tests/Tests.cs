@@ -1,4 +1,5 @@
 ﻿using System;
+using CalculatorV2.Parser;
 using NUnit.Framework;
 
 namespace CalculatorV2.Tests
@@ -7,10 +8,13 @@ namespace CalculatorV2.Tests
     class Tests
     {
         [Test]
-        [ExpectedException(ExpectedException = typeof(FormatException))]
         public void MalformedInput()
         {
-            new Calculator().Calculate("2 ++ 2");
+            var errorListener = new CustomErrorListener();
+            Assert.AreEqual(0, errorListener.Errors.Count);
+            new Calculator(false, errorListener).Calculate("2 ++- 2");
+            Assert.AreEqual(1, errorListener.Errors.Count);
+            
         }
 
         [TestCase("2+2", Result = "4")]
@@ -44,6 +48,12 @@ namespace CalculatorV2.Tests
         [TestCase("2.5 + 3.5", Result = "6")]
         [TestCase("1.1 + .2", Result = "1.3")]
         public string TestFloat(string input)
+        {
+            return new Calculator().Calculate(input);
+        }
+
+        [TestCase("3/0", ExpectedException = typeof(InvalidOperationException))]
+        public string TestDivisionByZero(string input)
         {
             return new Calculator().Calculate(input);
         }
