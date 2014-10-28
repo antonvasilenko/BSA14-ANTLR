@@ -52,7 +52,7 @@ namespace CalculatorV2.Tests
             return new Calculator().Calculate(input);
         }
 
-        [TestCase("3/0", ExpectedException = typeof(InvalidOperationException))]
+        [TestCase("3/0", ExpectedException = typeof(DivideByZeroException))]
         public string TestDivisionByZero(string input)
         {
             return new Calculator().Calculate(input);

@@ -31,7 +31,12 @@ namespace CalculatorV2.Parser
             if (opText == "*")
                 return left * right;
             if (opText == "/")
-                return left / right;
+                if (Math.Abs(right) > 0.0000001)
+                    return left / right;
+                else
+                {
+                    throw new DivideByZeroException();
+                }
             throw new FormatException("wrong operation, expected '+', '-', '*', '/'");
         }
 
